@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+   
+  <script src="jquery.backgroundMove.js"></script>
+    <title>Paint Planet</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="main__gif">
+        <img src="giphy.gif"  alt="">
+      </div>
+      <div class="main__content">
+        <div class="main__content--block1">
+         <div class="block1--lead"> Oh, Hi! <br> WElcome <br> to color my  planet</div>
+          <p class="bold block1--sec">the <br> disaster <br> artist</p>
+          <p>Event Today </p>
+          <div class="block1--goto">
+            <p>EXPLORE ARTIST <i class="fas fa-arrow-right"></i></p>
+          <p>BOOK EVENTS <i class="fas fa-arrow-right"></i></p>
+          </div>
+          
+          <div class="block1--social">
+            <span><i class="fab fa-instagram"></i></span>
+            <span><i class="fab fa-facebook-f"></i></span>
+            <span><i class="fab fa-twitter"></i></span>
+          </div>
+        </div>
+        <div class="main__content--block2">
+          <p id="role"></p>
+          <div class="block2--down-link">
+            <i id="scrollBtn" class="fas fa-arrow-down"></i>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- SECTION -->
+<section>
+  <div class="form">
+    <h1>Get our <span >App</span>  now</h1>
+<div class="loginBox">
+    <form action="https://formspree.io/clockstopfountain@gmail.com" method="POST">
+      <div class="inputBox">
+        <input type="text" required name="name" placeholder="John Doe">
+        <span><i class="far fa-user"></i></span>
+      </div>
+      <div class="inputBox">
+          <input required type="number" name="number" placeholder="7399857723">
+          <span><i class="fas fa-mobile-alt"></i></span>
+        </div>
+      <div class="inputBox">
+        <input type="email" required name="email" placeholder="john@example.com">
+        <span><i class="fas fa-at"></i></span>
+      </div>
+      <button type="submit"><svg viewBox="45 60 400 320" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#fff" d="M 90 210 C 90 180 90 150 90 150 C 150 150 180 150 180 150 C 180 150 300 150 300 150 C 300 150 330 150 390 150 C 390 150 390 180 390 210 C 390 240 390 270 390 270 C 330 270 300 270 300 270 C 300 270 180 270 180 270 C 180 270 150 270 90 270 C 90 270 90 240 90 210" mask="url(#knockout-text)" >
+        </path>
+        <mask id="knockout-text">
+          <rect width="100%" height="100%" fill="#fff" x="0" y="0" />
+          <text x="147" y="227" fill="#000">Subscribe</text>
+        </mask>
+    </svg></but>
+    </form>
+  </div>
+</div>
+</section>
+
+    <!-- script start -->
+   
+    <script>
+      $(document).ready(function() {
+        var roles = [
+          ' “Every <span class="bold">artist</span> was first an amateur<br><span class="quoteby">- Ralph Waldo Emerson"</span>',
+          ' “Creativity takes <span class="bold">courage</span> <br><span class="quoteby">- Henri Matisse"</span>',
+          ' “You dont take a photo , you <span class="bold">make it</span> <br><span class="quoteby">- Ansel Adams"</span>',
+          '“A picture is a  <span class="bold">poem</span> without words <br><span class="quoteby">- Horace"</span>'
+        ];
+        var roleId = 0;
+
+        setInterval(function() {
+          $('#role').html(roles[roleId]);
+          roleId = roleId + 1;
+          if (roleId >= roles.length) {
+            roleId = 0;
+          }
+        }, 3500);
+
+        $("#scrollBtn").click(function(){
+        
+          $("html,body").animate({scrollTop:$(document).height()},800)
+        })
+       
+      });
+
+    </script>
+    <!-- script end -->
+  </body>
+</html>
